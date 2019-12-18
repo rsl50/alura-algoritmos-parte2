@@ -1,8 +1,8 @@
 package br.com.alura.algoritmos;
 
 public class Nota {
-    private String aluno;
-    private double nota;
+    private final String aluno;
+    private final double nota;
 
     public Nota(String aluno, double nota) {
         this.aluno = aluno;

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6b76356-42d4-4d6c-9f41-3e87e8d27a11" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/alura/algoritmos/Nota.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/alura/algoritmos/TestaMerge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/robson.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/alura/algoritmos/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Curso_Alura_Algoritmos_Parte2/br/com/alura/algoritmos/Nota.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Curso_Alura_Algoritmos_Parte2/br/com/alura/algoritmos/Nota.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Curso_Alura_Algoritmos_Parte2/br/com/alura/algoritmos/TestaMerge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Curso_Alura_Algoritmos_Parte2/br/com/alura/algoritmos/TestaMerge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/alura/algoritmos/Nota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/alura/algoritmos/Nota.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/alura/algoritmos/TestaMerge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/alura/algoritmos/TestaMerge.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +35,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="E:/CursoAndroid/dictionary_ptbr.dic" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
   </component>
   <component name="RunManager" selected="Application.TestaMerge">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -81,6 +85,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="1" Folder0="E:\CursoAndroid" CustomDictionaries="1" CustomDictionary0="E:\CursoAndroid\dictionary_ptbr.dic" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="project-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -103,29 +108,45 @@
       <screen x="0" y="0" width="1360" height="738" />
     </state>
     <state x="485" y="84" key="#com.intellij.ide.util.MemberChooser/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576696919958" />
-    <state width="1317" height="182" key="GridCell.Tab.0.bottom" timestamp="1576699089840">
+    <state x="427" y="234" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576699185496">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state width="1317" height="182" key="GridCell.Tab.0.bottom/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576699089840" />
-    <state width="1317" height="182" key="GridCell.Tab.0.center" timestamp="1576699089840">
+    <state x="427" y="234" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576699185496" />
+    <state x="460" y="123" key="FileChooserDialogImpl" timestamp="1576699290047">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state width="1317" height="182" key="GridCell.Tab.0.center/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576699089840" />
-    <state width="1317" height="182" key="GridCell.Tab.0.left" timestamp="1576699089840">
+    <state x="460" y="123" key="FileChooserDialogImpl/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576699290047" />
+    <state width="1317" height="215" key="GridCell.Tab.0.bottom" timestamp="1576701046959">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state width="1317" height="182" key="GridCell.Tab.0.left/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576699089840" />
-    <state width="1317" height="182" key="GridCell.Tab.0.right" timestamp="1576699089840">
+    <state width="1317" height="215" key="GridCell.Tab.0.bottom/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576701046959" />
+    <state width="1317" height="215" key="GridCell.Tab.0.center" timestamp="1576701046959">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state width="1317" height="182" key="GridCell.Tab.0.right/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576699089840" />
+    <state width="1317" height="215" key="GridCell.Tab.0.center/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576701046959" />
+    <state width="1317" height="215" key="GridCell.Tab.0.left" timestamp="1576701046959">
+      <screen x="0" y="0" width="1360" height="738" />
+    </state>
+    <state width="1317" height="215" key="GridCell.Tab.0.left/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576701046959" />
+    <state width="1317" height="215" key="GridCell.Tab.0.right" timestamp="1576701046959">
+      <screen x="0" y="0" width="1360" height="738" />
+    </state>
+    <state width="1317" height="215" key="GridCell.Tab.0.right/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576701046959" />
+    <state x="181" y="11" key="SettingsEditor" timestamp="1576699295326">
+      <screen x="0" y="0" width="1360" height="738" />
+    </state>
+    <state x="181" y="11" key="SettingsEditor/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576699295326" />
     <state x="376" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1576695105198">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
     <state x="376" y="192" key="com.intellij.ide.util.TipDialog/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576695105198" />
-    <state x="376" y="0" width="607" height="738" key="find.popup" timestamp="1576698707842">
+    <state x="376" y="0" width="764" height="738" key="find.popup" timestamp="1576699176123">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state x="376" y="0" width="607" height="738" key="find.popup/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576698707842" />
+    <state x="376" y="0" width="764" height="738" key="find.popup/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576699176123" />
+    <state x="343" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1576699260670">
+      <screen x="0" y="0" width="1360" height="738" />
+    </state>
+    <state x="343" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1360.738/-1360.6.1360.738@0.0.1360.738" timestamp="1576699260670" />
   </component>
 </project>

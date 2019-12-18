@@ -1,7 +1,5 @@
 package br.com.alura.algoritmos;
 
-import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
-
 public class TestaMerge {
 
     public static void main(String[] args) {
@@ -20,15 +18,15 @@ public class TestaMerge {
                 new Nota("Ana", 10.0)
         };
 
-        Nota[] rank = junta(notasDoMauricio, notasDoAlberto);
+        Nota[] rank = intercala(notasDoAlberto, notasDoMauricio);
         for (Nota nota: rank) {
             System.out.println(nota.getAluno() + " - " + nota.getNota());
         }
     }
 
-    private static Nota[] junta(Nota[] notas1, Nota[] notas2) {
+    private static Nota[] intercala(Nota[] notas1, Nota[] notas2) {
         int tamanho =  notas1.length + notas2.length;
-        Nota resultado[] = new Nota[tamanho];
+        Nota[] resultado = new Nota[tamanho];
 
         int atualNotas1 = 0;
         int atualNotas2 = 0;
@@ -43,6 +41,18 @@ public class TestaMerge {
                 atualNotas2++;
             }
 
+            atual++;
+        }
+
+        while (atualNotas1 < notas1.length) {
+            resultado[atual] = notas1[atualNotas1];
+            atualNotas1++;
+            atual++;
+        }
+
+        while (atualNotas2 < notas2.length) {
+            resultado[atual] = notas2[atualNotas2];
+            atualNotas2++;
             atual++;
         }
 
