@@ -42,6 +42,18 @@ public class TestaMerge {
                 new Nota("Lucia", 9.8)
         };
 
+        Nota[] notasBaguncado = {
+                new Nota("paulo", 9),
+                new Nota("mariana", 5),
+                new Nota("juliana", 6.7),
+                new Nota("ana", 10),
+                new Nota("lucia", 9.3),
+                new Nota("jonas", 3),
+                new Nota("andre", 4),
+                new Nota("carlos", 8.5),
+                new Nota("guilherme", 7)
+        };
+
         String[] nomes = {
                 "Andressa",
                 "Camila",
@@ -59,18 +71,33 @@ public class TestaMerge {
         //Nota[] rank = intercala(notasDaSala, 0, 4, notasDaSala.length);
         //Nota[] rank = intercala(outrasNotas, 0, 5, outrasNotas.length);
         //Nota[] rank = mergeSort(notasDaSala);
-//        for (Nota nota: rank) {
-//            System.out.println(nota.getAluno() + " - " + nota.getValor());
-//        }
+        //for (Nota nota: rank) {
+        //System.out.println(nota.getAluno() + " - " + nota.getValor());
+        //}
+//      String[] rank = intercala(nomes, 0, 5, nomes.length);
+//      for (String nome: rank) {
+//          System.out.println(nome);
+//      }
 
-        String[] rank = intercala(nomes, 0, 5, nomes.length);
-        for (String nome: rank) {
-            System.out.println(nome);
+        intercalaNotas(notasBaguncado, 0, 1, 2);
+        intercalaNotas(notasBaguncado, 2, 3, 4);
+        intercalaNotas(notasBaguncado, 0, 2, 4);
+
+        intercalaNotas(notasBaguncado, 4, 5, 6);
+        intercalaNotas(notasBaguncado, 6, 7, 8);
+        intercalaNotas(notasBaguncado, 4, 6, 8);
+
+        intercalaNotas(notasBaguncado, 0, 4, 8);
+        intercalaNotas(notasBaguncado, 0, 8, 9);
+
+        for (Nota nota: notasBaguncado) {
+            System.out.println(nota.getAluno() + " - " + nota.getValor());
         }
+
     }
 
     private static Nota[] intercala(Nota[] notas1, Nota[] notas2) {
-        int tamanho =  notas1.length + notas2.length;
+        int tamanho = notas1.length + notas2.length;
         Nota[] resultado = new Nota[tamanho];
 
         int atualNotas1 = 0;
@@ -100,7 +127,7 @@ public class TestaMerge {
             atual++;
         }
 
-        return  resultado;
+        return resultado;
     }
 
     private static Nota[] intercala(Nota[] notas, int inicio, int meio, int termino) {
@@ -150,6 +177,51 @@ public class TestaMerge {
         return notas;
     }
 
+    private static void intercalaNotas(Nota[] notas, int inicio, int meio, int termino) {
+        Nota[] resultado = new Nota[termino - inicio];
+        int atual = 0;
+        int atual1 = inicio;
+        int atual2 = meio;
+
+        while (atual1 < meio &&
+                atual2 < termino) {
+
+            Nota nota1 = notas[atual1];
+            Nota nota2 = notas[atual2];
+
+            if (nota1.getValor() < nota2.getValor()) {
+                resultado[atual] = nota1;
+                atual1++;
+            } else {
+                resultado[atual] = nota2;
+                atual2++;
+            }
+
+            atual++;
+        }
+
+        while (atual1 < meio) {
+            resultado[atual] = notas[atual1];
+            atual1++;
+            atual++;
+        }
+
+        while (atual2 < termino) {
+            resultado[atual] = notas[atual2];
+            atual2++;
+            atual++;
+        }
+
+//        for (int contador = 0; contador < atual; contador++) {
+//            notas[inicio + contador] = resultado[contador];
+//        }
+
+        atual = inicio;
+        for (Nota nota : resultado) {
+            notas[atual++] = nota;
+        }
+    }
+
     private static String[] intercala(String[] nomes, int inicio, int meio, int termino) {
         String[] resultado = new String[termino - inicio];
         int atual = 0;
@@ -197,14 +269,14 @@ public class TestaMerge {
     }
 
     private static Nota[] mergeSort(Nota[] notas) {
-        int tamanho =  notas.length;
+        int tamanho = notas.length;
         Nota[] resultado = new Nota[tamanho];
 
         int atualNotas1 = 0;
         int atualNotas2 = tamanho / 2;
         int atual = 0;
 
-        while ((atualNotas1 <  (tamanho / 2)) && (atualNotas2 < tamanho)) {
+        while ((atualNotas1 < (tamanho / 2)) && (atualNotas2 < tamanho)) {
             if (notas[atualNotas1].getValor() < notas[atualNotas2].getValor()) {
                 resultado[atual] = notas[atualNotas1++];
             } else {
@@ -216,7 +288,7 @@ public class TestaMerge {
             }
         }
 
-        while (atualNotas1 <  (tamanho / 2)) {
+        while (atualNotas1 < (tamanho / 2)) {
             resultado[atual] = notas[atualNotas1++];
             if (atual < tamanho - 1) {
                 atual++;
@@ -231,6 +303,6 @@ public class TestaMerge {
             }
         }
 
-        return  resultado;
+        return resultado;
     }
 }
