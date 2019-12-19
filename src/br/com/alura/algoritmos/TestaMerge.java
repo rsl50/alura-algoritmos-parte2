@@ -30,11 +30,42 @@ public class TestaMerge {
                 new Nota("Ana", 10.0)
         };
 
+        Nota[] outrasNotas = {
+                new Nota("Jonas", 2),
+                new Nota("Fernando", 2.3),
+                new Nota("Ana", 7.1),
+                new Nota("Guilherme", 8),
+                new Nota("Alberto", 9.2),
+                new Nota("Maria", 5.25),
+                new Nota("Paulo", 6),
+                new Nota("Enzo", 7.9),
+                new Nota("Lucia", 9.8)
+        };
+
+        String[] nomes = {
+                "Andressa",
+                "Camila",
+                "Enzo",
+                "Fernando",
+                "Maria",
+                "Alberto",
+                "Jonas",
+                "Junior",
+                "Paloma",
+                "Paulo"
+        };
+
         //Nota[] rank = intercala(notasDoMauricio, notasDoAlberto);
-        Nota[] rank = intercala(notasDaSala, 0, 4, notasDaSala.length - 3);
+        //Nota[] rank = intercala(notasDaSala, 0, 4, notasDaSala.length);
+        //Nota[] rank = intercala(outrasNotas, 0, 5, outrasNotas.length);
         //Nota[] rank = mergeSort(notasDaSala);
-        for (Nota nota: rank) {
-            System.out.println(nota.getAluno() + " - " + nota.getValor());
+//        for (Nota nota: rank) {
+//            System.out.println(nota.getAluno() + " - " + nota.getValor());
+//        }
+
+        String[] rank = intercala(nomes, 0, 5, nomes.length);
+        for (String nome: rank) {
+            System.out.println(nome);
         }
     }
 
@@ -117,6 +148,52 @@ public class TestaMerge {
         }
 
         return notas;
+    }
+
+    private static String[] intercala(String[] nomes, int inicio, int meio, int termino) {
+        String[] resultado = new String[termino - inicio];
+        int atual = 0;
+        int atual1 = inicio;
+        int atual2 = meio;
+
+        while (atual1 < meio && atual2 < termino) {
+
+            String nome1 = nomes[atual1];
+            String nome2 = nomes[atual2];
+
+            if (nome1.compareTo(nome2) < 0) {
+                resultado[atual] = nome1;
+                atual1++;
+            } else {
+                resultado[atual] = nome2;
+                atual2++;
+            }
+
+            atual++;
+        }
+
+        while (atual1 < meio) {
+            resultado[atual] = nomes[atual1];
+            atual1++;
+            atual++;
+        }
+
+        while (atual2 < termino) {
+            resultado[atual] = nomes[atual2];
+            atual2++;
+            atual++;
+        }
+
+//        for (int contador = 0; contador < atual; contador++) {
+//            nomes[inicio + contador] = resultado[contador];
+//        }
+
+        atual = inicio;
+        for (String nome : resultado) {
+            nomes[atual++] = nome;
+        }
+
+        return nomes;
     }
 
     private static Nota[] mergeSort(Nota[] notas) {
