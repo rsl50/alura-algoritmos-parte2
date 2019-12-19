@@ -1,7 +1,5 @@
 package br.com.alura.algoritmos;
 
-import java.sql.SQLOutput;
-
 public class TestaMerge {
 
     public static void main(String[] args) {
@@ -32,10 +30,11 @@ public class TestaMerge {
                 new Nota("Ana", 10.0)
         };
 
-        //Nota[] rank = intercala(notasDoAlberto, notasDoMauricio);
-        Nota[] rank = mergeSort(notasDaSala);
+        //Nota[] rank = intercala(notasDoMauricio, notasDoAlberto);
+        Nota[] rank = intercala(notasDaSala, 0, 4, notasDaSala.length - 3);
+        //Nota[] rank = mergeSort(notasDaSala);
         for (Nota nota: rank) {
-            System.out.println(nota.getAluno() + " - " + nota.getNota());
+            System.out.println(nota.getAluno() + " - " + nota.getValor());
         }
     }
 
@@ -48,14 +47,13 @@ public class TestaMerge {
         int atual = 0;
 
         while ((atualNotas1 < notas1.length) && (atualNotas2 < notas2.length)) {
-            if (notas1[atualNotas1].getNota() < notas2[atualNotas2].getNota()) {
+            if (notas1[atualNotas1].getValor() < notas2[atualNotas2].getValor()) {
                 resultado[atual] = notas1[atualNotas1];
                 atualNotas1++;
             } else {
                 resultado[atual] = notas2[atualNotas2];
                 atualNotas2++;
             }
-
             atual++;
         }
 
@@ -74,6 +72,53 @@ public class TestaMerge {
         return  resultado;
     }
 
+    private static Nota[] intercala(Nota[] notas, int inicio, int meio, int termino) {
+        Nota[] resultado = new Nota[termino - inicio];
+        int atual = 0;
+        int atual1 = inicio;
+        int atual2 = meio;
+
+        while (atual1 < meio &&
+                atual2 < termino) {
+
+            Nota nota1 = notas[atual1];
+            Nota nota2 = notas[atual2];
+
+            if (nota1.getValor() < nota2.getValor()) {
+                resultado[atual] = nota1;
+                atual1++;
+            } else {
+                resultado[atual] = nota2;
+                atual2++;
+            }
+
+            atual++;
+        }
+
+        while (atual1 < meio) {
+            resultado[atual] = notas[atual1];
+            atual1++;
+            atual++;
+        }
+
+        while (atual2 < termino) {
+            resultado[atual] = notas[atual2];
+            atual2++;
+            atual++;
+        }
+
+//        for (int contador = 0; contador < atual; contador++) {
+//            notas[inicio + contador] = resultado[contador];
+//        }
+
+        atual = inicio;
+        for (Nota nota : resultado) {
+            notas[atual++] = nota;
+        }
+
+        return notas;
+    }
+
     private static Nota[] mergeSort(Nota[] notas) {
         int tamanho =  notas.length;
         Nota[] resultado = new Nota[tamanho];
@@ -83,12 +128,10 @@ public class TestaMerge {
         int atual = 0;
 
         while ((atualNotas1 <  (tamanho / 2)) && (atualNotas2 < tamanho)) {
-            if (notas[atualNotas1].getNota() < notas[atualNotas2].getNota()) {
-                resultado[atual] = notas[atualNotas1];
-                atualNotas1++;
+            if (notas[atualNotas1].getValor() < notas[atualNotas2].getValor()) {
+                resultado[atual] = notas[atualNotas1++];
             } else {
-                resultado[atual] = notas[atualNotas2];
-                atualNotas2++;
+                resultado[atual] = notas[atualNotas2++];
             }
 
             if (atual < tamanho - 1) {
@@ -97,16 +140,15 @@ public class TestaMerge {
         }
 
         while (atualNotas1 <  (tamanho / 2)) {
-            resultado[atual] = notas[atualNotas1];
-            atualNotas1++;
+            resultado[atual] = notas[atualNotas1++];
             if (atual < tamanho - 1) {
                 atual++;
             }
         }
 
         while (atualNotas2 < tamanho) {
-            resultado[atual] = notas[atualNotas2];
-            atualNotas2++;
+            resultado[atual] = notas[atualNotas2++];
+
             if (atual < tamanho - 1) {
                 atual++;
             }
