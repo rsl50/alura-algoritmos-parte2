@@ -79,20 +79,31 @@ public class TestaMerge {
 //          System.out.println(nome);
 //      }
 
-        intercalaNotas(notasBaguncado, 0, 1, 2);
-        intercalaNotas(notasBaguncado, 2, 3, 4);
-        intercalaNotas(notasBaguncado, 0, 2, 4);
+//        intercalaNotas(notasBaguncado, 0, 1, 2);
+//        intercalaNotas(notasBaguncado, 2, 3, 4);
+//        intercalaNotas(notasBaguncado, 0, 2, 4);
+//
+//        intercalaNotas(notasBaguncado, 4, 5, 6);
+//        intercalaNotas(notasBaguncado, 6, 7, 8);
+//        intercalaNotas(notasBaguncado, 4, 6, 8);
+//
+//        intercalaNotas(notasBaguncado, 0, 4, 8);
+//
+//        intercalaNotas(notasBaguncado, 0, 8, 9);
+//
+//        for (Nota nota: notasBaguncado) {
+//            System.out.println(nota.getAluno() + " - " + nota.getValor());
+//        }
 
-        intercalaNotas(notasBaguncado, 4, 5, 6);
-        intercalaNotas(notasBaguncado, 6, 7, 8);
-        intercalaNotas(notasBaguncado, 4, 6, 8);
-
-        intercalaNotas(notasBaguncado, 0, 4, 8);
-        intercalaNotas(notasBaguncado, 0, 8, 9);
-
+        ordena(notasBaguncado, 0, notasBaguncado.length);
         for (Nota nota: notasBaguncado) {
             System.out.println(nota.getAluno() + " - " + nota.getValor());
         }
+
+        ordena(nomes, 0, nomes.length);
+        for (String nome: nomes) {
+          System.out.println(nome);
+      }
 
     }
 
@@ -183,6 +194,8 @@ public class TestaMerge {
         int atual1 = inicio;
         int atual2 = meio;
 
+        System.out.println("Roda intercala");
+
         while (atual1 < meio &&
                 atual2 < termino) {
 
@@ -268,6 +281,51 @@ public class TestaMerge {
         return nomes;
     }
 
+    private static void intercalaNomes(String[] nomes, int inicio, int meio, int termino) {
+        String[] resultado = new String[termino - inicio];
+        int atual = 0;
+        int atual1 = inicio;
+        int atual2 = meio;
+
+        while (atual1 < meio && atual2 < termino) {
+
+            String nome1 = nomes[atual1];
+            String nome2 = nomes[atual2];
+
+            if (nome1.compareTo(nome2) < 0) {
+                resultado[atual] = nome1;
+                atual1++;
+            } else {
+                resultado[atual] = nome2;
+                atual2++;
+            }
+
+            atual++;
+        }
+
+        while (atual1 < meio) {
+            resultado[atual] = nomes[atual1];
+            atual1++;
+            atual++;
+        }
+
+        while (atual2 < termino) {
+            resultado[atual] = nomes[atual2];
+            atual2++;
+            atual++;
+        }
+
+//        for (int contador = 0; contador < atual; contador++) {
+//            nomes[inicio + contador] = resultado[contador];
+//        }
+
+        atual = inicio;
+        for (String nome : resultado) {
+            nomes[atual++] = nome;
+        }
+    }
+
+
     private static Nota[] mergeSort(Nota[] notas) {
         int tamanho = notas.length;
         Nota[] resultado = new Nota[tamanho];
@@ -304,5 +362,27 @@ public class TestaMerge {
         }
 
         return resultado;
+    }
+
+    private static void ordena(Nota[] notas, int inicio, int termino) {
+        int quantidade = termino - inicio;
+        if (quantidade > 1) {
+            int meio = (inicio + termino) / 2;
+            System.out.println("Recursivo|inicio:"+inicio+"|termino:"+termino+"|meio:"+meio+"|quantidade:"+quantidade);
+            ordena(notas, inicio, meio);
+            ordena(notas, meio, termino);
+            intercalaNotas(notas, inicio, meio, termino);
+        }
+    }
+
+    private static void ordena(String[] nomes, int inicio, int termino) {
+        int quantidade = termino - inicio;
+        if (quantidade > 1) {
+            int meio = (inicio + termino) / 2;
+            System.out.println("Recursivo|inicio:"+inicio+"|termino:"+termino+"|meio:"+meio+"|quantidade:"+quantidade);
+            ordena(nomes, inicio, meio);
+            ordena(nomes, meio, termino);
+            intercalaNomes(nomes, inicio, meio, termino);
+        }
     }
 }
