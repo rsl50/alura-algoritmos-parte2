@@ -29,6 +29,7 @@ public class TestaPivota {
 
         for (int i = 0; i < termino - 1; i++) {
             if (notas[i].getValor() < pivo.getValor()) {
+                troca(notas, i, menores);
                 menores++;
             }
         }
