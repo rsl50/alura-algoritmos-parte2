@@ -24,8 +24,8 @@ public class TesteEncontraMenores {
     private static int buscaMenores (Nota busca, Nota[] notas) {
         int menores = 0;
 
-        for (int i = 0; i < notas.length; i++) {
-            if (busca.getValor() < notas[i].getValor()) {
+        for (Nota nota: notas) {
+            if (nota.getValor() < busca.getValor()) {
                 menores++;
             }
         }
