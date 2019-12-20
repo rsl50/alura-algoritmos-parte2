@@ -30,6 +30,9 @@ public class TestaOrdenacaoRapida {
         };*/
 
         quickSort(notasDaSala, 0, notasDaSala.length);
+        int encontrei = buscaLinear(notasDaSala, 0, notasDaSala.length, 9.3);
+        System.out.println("Encontrei nota em: "+ encontrei + ".");
+
         for (Nota nota: notasDaSala) {
             System.out.println(nota.getAluno() + " - " + nota.getValor());
         }
@@ -38,6 +41,15 @@ public class TestaOrdenacaoRapida {
         for (String nome: nomes) {
             System.out.println(nome);
         }*/
+    }
+
+    private static int buscaLinear (Nota[] notas, int de, int ate, double buscar) {
+        for (int i = de; i < ate; i++) {
+            if (notas[i].getValor() == buscar) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     private static void quickSort (Nota[] notas, int de, int ate) {
@@ -51,14 +63,14 @@ public class TestaOrdenacaoRapida {
         }
     }
 
-    private static void ordena (String[] nomes, int de, int ate) {
+    private static void quickSort (String[] nomes, int de, int ate) {
         int elementos = ate - de; //Tamanho do trecho a ser ordenado
 
         if (elementos > 1) {
             int posicaoPivo = particiona(nomes, de, ate);
             System.out.println("Recursivo|de:"+de+"|ate:"+ate+"|posicaoPivo:"+posicaoPivo+"|elementos:"+elementos);
-            ordena(nomes, de, posicaoPivo);
-            ordena(nomes, posicaoPivo + 1, ate);
+            quickSort(nomes, de, posicaoPivo);
+            quickSort(nomes, posicaoPivo + 1, ate);
         }
     }
 
