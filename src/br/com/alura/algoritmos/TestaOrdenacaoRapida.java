@@ -16,7 +16,7 @@ public class TestaOrdenacaoRapida {
                 gui,
         };
 
-        String[] nomes = {
+        /*String[] nomes = {
                 "Maria",
                 "Camila",
                 "Fernando",
@@ -27,27 +27,27 @@ public class TestaOrdenacaoRapida {
                 "Junior",
                 "Enzo",
                 "Paulo"
-        };
+        };*/
 
-        /*ordena(notasDaSala, 0, notasDaSala.length);
+        quickSort(notasDaSala, 0, notasDaSala.length);
         for (Nota nota: notasDaSala) {
             System.out.println(nota.getAluno() + " - " + nota.getValor());
-        }*/
+        }
 
-        ordena(nomes, 0, nomes.length);
+        /*ordena(nomes, 0, nomes.length);
         for (String nome: nomes) {
             System.out.println(nome);
-        }
+        }*/
     }
 
-    private static void ordena (Nota[] notas, int de, int ate) {
+    private static void quickSort (Nota[] notas, int de, int ate) {
         int elementos = ate - de; //Tamanho do trecho a ser ordenado
 
         if (elementos > 1) {
             int posicaoPivo = particiona(notas, de, ate);
-            System.out.println("Recursivo|de:"+de+"|ate:"+ate+"|posicaoPivo:"+posicaoPivo+"|elementos:"+elementos);
-            ordena(notas, de, posicaoPivo);
-            ordena(notas, posicaoPivo + 1, ate);
+            //System.out.println("Recursivo|de:"+de+"|ate:"+ate+"|posicaoPivo:"+posicaoPivo+"|elementos:"+elementos);
+            quickSort(notas, de, posicaoPivo);
+            quickSort(notas, posicaoPivo + 1, ate);
         }
     }
 
